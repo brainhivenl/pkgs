@@ -17,8 +17,19 @@
     {
       packages = forAllSystems (
         { pkgs, ... }:
+        with pkgs;
         {
-          apple-sdk = pkgs.callPackage ./apple-sdk.nix { };
+          apple-sdk = callPackage ./apple-sdk.nix { };
+          bazelisk = (
+            symlinkJoin {
+              name = "bazelisk";
+              paths = [ bazelisk ];
+              buildInputs = [ makeWrapper ];
+              postBuild = ''
+                makeWrapper $out/bin/bazelisk $out/bin/bazel
+              '';
+            }
+          );
         }
       );
     };
