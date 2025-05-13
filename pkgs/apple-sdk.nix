@@ -24,6 +24,6 @@ symlinkJoin {
     ''
       library_path="$out/Platforms/MacOSX.platform/Developer/SDKs/MacOSX${package.version}.sdk/usr/lib"
       mkdir -p $library_path
-      ${map mkStub extraLibraries |> lib.concatStringsSep "\n"}
+      ${lib.concatStringsSep "\n" (map mkStub extraLibraries)}
     '';
 }
