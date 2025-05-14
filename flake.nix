@@ -34,7 +34,12 @@
         packages = self.packages.${prev.system};
       in {
         brain = {
-          inherit (packages) aptakube bazelisk;
+          inherit
+            (packages)
+            aptakube
+            bazelisk
+            apple-sdk
+            ;
           mkSdkShell = prev.callPackage ./pkgs/sdk-shell.nix {inherit (packages) apple-sdk;};
         };
       };
