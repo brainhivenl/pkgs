@@ -8,10 +8,10 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1747161626,
+        "lastModified": 1747224495,
         "owner": "brainhivenl",
         "repo": "pkgs",
-        "rev": "2b98b5df25fc5ddb46894ab8b8ed0260cfec4c51",
+        "rev": "870df8f578d4e2240cbfc2bcf14cb660c18b567e",
         "type": "github"
       },
       "original": {
