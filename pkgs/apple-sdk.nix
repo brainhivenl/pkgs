@@ -6,7 +6,7 @@
   extraLibraries ? [],
 }:
 package.overrideAttrs {
-  postInstall = let
+  patchPhase = let
     mkStub = dylib:
     # sh
     ''
@@ -16,6 +16,7 @@ package.overrideAttrs {
     # sh
     ''
       library_path="$out/Platforms/MacOSX.platform/Developer/SDKs/MacOSX${package.version}.sdk/usr/lib"
+      mkdir -p $library_path
       ${lib.concatStringsSep "\n" (map mkStub extraLibraries)}
     '';
 }
