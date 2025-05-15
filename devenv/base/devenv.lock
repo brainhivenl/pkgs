@@ -8,10 +8,10 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1747224495,
+        "lastModified": 1747226954,
         "owner": "brainhivenl",
         "repo": "pkgs",
-        "rev": "870df8f578d4e2240cbfc2bcf14cb660c18b567e",
+        "rev": "39675741e0fb57c7918415d3904ea6c288663c7f",
         "type": "github"
       },
       "original": {
@@ -23,10 +23,10 @@
     "devenv": {
       "locked": {
         "dir": "src/modules",
-        "lastModified": 1747151268,
+        "lastModified": 1747185494,
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "cd040439a1db79e493d56ed3c08f53a6392ae43e",
+        "rev": "b292bc94c2daccda165bc9f909bf6c8056e37a80",
         "type": "github"
       },
       "original": {

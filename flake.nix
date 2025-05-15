@@ -46,9 +46,13 @@
     };
 
     templates = {
-      bazel-flake = {
+      bazel-devenv = {
         path = ./templates/bazel;
-        description = "Simple flake for Rust development with the Bazel build system";
+        description = "Devenv for Rust development with the Bazel build system";
+      };
+      kubernetes-devenv = {
+        path = ./templates/kubernetes;
+        description = "Devenv for local development with kubernetes, powered by k3s and skaffold";
       };
     };
   };
