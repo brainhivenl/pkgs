@@ -1,0 +1,11 @@
+inputs:
+  nixpkgs:
+    url: github:cachix/devenv-nixpkgs/rolling
+  brainhive:
+    url: github:brainhivenl/pkgs
+    inputs:
+      nixpkgs:
+        follows: nixpkgs
+
+imports:
+  - brainhive/devenv/base
