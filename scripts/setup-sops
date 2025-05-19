@@ -1,0 +1,17 @@
+#! /usr/bin/env nix-shell
+#! nix-shell -i bash -p bash sops ssh-to-age
+
+# TODO: read path to key from stdin or maybe use 1password cli
+tmp=$(mktemp -d)
+ssh-keygen -t ed25519 -a 32 -N "" -f "$tmp/id_25519" > /dev/null
+
+PRIVKEY="$tmp/id_25519"
+PUBKEY="$tmp/id_25519.pub"
+
+SOPS_PATH="$HOME/Library/Application Support/sops"
+mkdir -p "$SOPS_PATH/age"
+
+ssh-to-age -private-key < "$PRIVKEY" >> "$SOPS_PATH/age/keys.txt"
+echo "Your public age key (write this down): $(ssh-to-age < "$PUBKEY")"
+
+

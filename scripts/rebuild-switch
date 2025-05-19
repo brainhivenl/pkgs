@@ -1,0 +1,8 @@
+#! /usr/bin/env nix-shell
+#! nix-shell -i bash -p bash
+
+export NIX_CONFIG="
+  extra-experimental-features = nix-command flakes pipe-operators
+"
+
+nix run nix-darwin/master#darwin-rebuild -- switch
