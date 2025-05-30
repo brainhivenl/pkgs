@@ -5,4 +5,4 @@ export NIX_CONFIG="
   extra-experimental-features = nix-command flakes pipe-operators
 "
 
-nix run nix-darwin/master#darwin-rebuild -- switch
+nix run nix-darwin/master#darwin-rebuild --extra-experimental-features "nix-command flakes pipe-operators" -- switch --flake .#
