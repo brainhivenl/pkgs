@@ -15,7 +15,7 @@
   programs.zsh = {
     enable = true;
     shellInit = ''
-      eval "$(${lib.getExe pkgs.direnv} hook zsh)"
+      eval "${lib.getExe pkgs.direnv} hook zsh"
     '';
   };
 
