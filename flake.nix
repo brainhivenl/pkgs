@@ -54,6 +54,10 @@
         path = ./templates/kubernetes;
         description = "Devenv for local development with kubernetes, powered by k3s and skaffold";
       };
+      darwin-config = {
+        path = ./templates/nix-darwin-config;
+        description = "Nix darwin config";
+      };
     };
   };
 }
