@@ -7,11 +7,11 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "aptakube";
-  version = "1.11.5";
+  version = "1.11.6";
 
   src = fetchurl {
     url = "https://releases.aptakube.com/Aptakube_${finalAttrs.version}_universal.dmg";
-    sha256 = "sha256-6X/IsukSpUJrcqcJWcYd5kczyVNe8WOtfbp0ErgdS+A=";
+    sha256 = "sha256-z9PNmf6KNeHeYycEZF7rJWu22UJffJVuLU4J4upQi60=";
   };
 
   nativeBuildInputs = [
