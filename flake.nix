@@ -25,6 +25,7 @@
       aptakube = callPackage ./pkgs/aptakube.nix {};
       bazelisk = callPackage ./pkgs/bazelisk.nix {};
       apple-sdk = callPackage ./pkgs/apple-sdk.nix {};
+      thalassa-cloud-cli = callPackage ./pkgs/thalassa-cloud-cli.nix {};
     });
 
     formatter = self.lib.eachSystemPkgs ({alejandra, ...}: alejandra);
@@ -39,6 +40,7 @@
             aptakube
             bazelisk
             apple-sdk
+            thalassa-cloud-cli
             ;
           mkSdkShell = prev.callPackage ./pkgs/sdk-shell.nix {inherit (packages) apple-sdk;};
         };
