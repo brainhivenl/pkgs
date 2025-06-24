@@ -56,7 +56,7 @@ in {
       k3d = lib.mkIf useK3d {
         exec = "k3d cluster start ${cfg.clusterName}";
       };
-      skaffold = lib.mkIf useSkaffold {
+      skaffold = lib.mkIf (useSkaffold && cfg.clusterName != null) {
         exec = "kubie exec k3d-${cfg.clusterName} ${cfg.namespace} skaffold ${cfg.skaffoldCommand} --cleanup=false";
       };
     };
