@@ -4,16 +4,16 @@
 }:
 buildGoModule {
   pname = "thalassa-cloud-cli";
-  version = "0.3.0";
+  version = "0.4.1";
 
   src = fetchFromGitHub {
     owner = "thalassa-cloud";
     repo = "cli";
-    rev = "64452f71607269c8a214264c71df9d4ad9025ea7";
-    hash = "sha256-1L3FcwAyTfbjBfZJ9lpp43bmW0xwATKc+QZvIz1m71k=";
+    rev = "9250bc8bf294446f6519c5147aad466a3c4a6a4f";
+    hash = "sha256-rsimcFG2uwwpsJEUpJuP7CA5AwyITFV65yCg75fcisU=";
   };
 
-  vendorHash = "sha256-JwGqt1Y0cyZaC3WEupJS0MTCQKsABtMtE8V4Z701+5Q=";
+  vendorHash = "sha256-e9z5QGlbJ0LM1z8AUNzjGiOSkPExBQHdwJWdGxv/Zxc=";
 
   postInstall = ''
     mv $out/bin/cli $out/bin/tcloud
