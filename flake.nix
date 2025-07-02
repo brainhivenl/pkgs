@@ -26,6 +26,7 @@
       bazelisk = callPackage ./pkgs/bazelisk.nix {};
       apple-sdk = callPackage ./pkgs/apple-sdk.nix {};
       thalassa-cloud-cli = callPackage ./pkgs/thalassa-cloud-cli.nix {};
+      protobuf-language-server = callPackage ./pkgs/protobuf-language-server.nix {};
     });
 
     formatter = self.lib.eachSystemPkgs ({alejandra, ...}: alejandra);
@@ -41,6 +42,7 @@
             bazelisk
             apple-sdk
             thalassa-cloud-cli
+            protobuf-language-server
             ;
           mkSdkShell = prev.callPackage ./pkgs/sdk-shell.nix {inherit (packages) apple-sdk;};
         };
