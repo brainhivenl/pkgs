@@ -22,7 +22,6 @@
     };
 
     packages = self.lib.eachSystemPkgs ({callPackage, ...}: {
-      aptakube = callPackage ./pkgs/aptakube.nix {};
       bazelisk = callPackage ./pkgs/bazelisk.nix {};
       apple-sdk = callPackage ./pkgs/apple-sdk.nix {};
       thalassa-cloud-cli = callPackage ./pkgs/thalassa-cloud-cli.nix {};
@@ -36,9 +35,9 @@
         packages = self.packages.${prev.system};
       in {
         brain = {
+          inherit (prev) aptakube;
           inherit
             (packages)
-            aptakube
             bazelisk
             apple-sdk
             thalassa-cloud-cli
