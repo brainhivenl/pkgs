@@ -8,7 +8,6 @@
 in {
   options.bazel = with lib; {
     enable = mkEnableOption "Whether to enable Bazel integration";
-
     extraLibraries = mkOption {
       type = types.listOf types.package;
       description = "List of library packages to be included in the Apple SDK";

@@ -8,15 +8,16 @@
 package.overrideAttrs {
   patchPhase = let
     mkStub = dylib:
-    # sh
     ''
-      ${lib.getExe darwin.libtapi} stubify "${dylib}/lib/${dylib.pname}.dylib" -o "$library_path/${dylib.pname}.tbd"
+      ${lib.getExe darwin.libtapi} stubify "${dylib}/lib/${dylib.pname}.dylib" -o "$sdk_path/usr/lib/${dylib.pname}.tbd"
+      cp ${lib.getInclude dylib}/include/*.h "$sdk_path/usr/include/"
     '';
   in
-    # sh
     ''
-      library_path="$out/Platforms/MacOSX.platform/Developer/SDKs/MacOSX${package.version}.sdk/usr/lib"
-      mkdir -p $library_path
+      sdk_path="$out/Platforms/MacOSX.platform/Developer/SDKs/MacOSX${package.version}.sdk"
+      mkdir -p $sdk_path/usr/lib
+      mkdir -p $sdk_path/usr/include
+
       ${lib.concatStringsSep "\n" (map mkStub extraLibraries)}
     '';
 }
