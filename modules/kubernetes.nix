@@ -35,7 +35,7 @@ in {
       kubectl
       kubie
       k3d
-      steiger
+      brain.steiger
       kubernetes-helm
     ];
 
