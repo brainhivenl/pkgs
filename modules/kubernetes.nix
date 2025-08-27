@@ -7,7 +7,6 @@
   cfg = config.kubernetes;
 
   useK3d = cfg.clusterName != null;
-  useSkaffold = cfg.defaultRepo != null;
 in {
   options.kubernetes = with lib; {
     enable = mkEnableOption "Whether to enable local Kubernetes integrations";
@@ -15,12 +14,6 @@ in {
     clusterName = mkOption {
       type = types.nullOr types.str;
       description = "Name of local K3D cluster";
-      default = null;
-    };
-
-    namespace = mkOption {
-      type = types.nullOr types.str;
-      description = "Default kubernetes namespace to execute skaffold in";
       default = null;
     };
 
@@ -42,22 +35,15 @@ in {
       kubectl
       kubie
       k3d
-      skaffold
+      steiger
       kubernetes-helm
     ];
-
-    env = {
-      SKAFFOLD_DEFAULT_REPO = lib.optionalString useSkaffold cfg.defaultRepo;
-    };
 
     process.managers.process-compose.tui.enable = lib.mkDefault false;
 
     processes = {
       k3d = lib.mkIf useK3d {
         exec = "k3d cluster start ${cfg.clusterName}";
-      };
-      skaffold = lib.mkIf (useSkaffold && useK3d) {
-        exec = "kubie exec k3d-${cfg.clusterName} ${cfg.namespace} skaffold ${cfg.skaffoldCommand} --cleanup=false";
       };
     };
   };
