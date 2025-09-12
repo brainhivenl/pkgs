@@ -5,13 +5,14 @@
         "nixpkgs": [
           "nixpkgs"
         ],
+        "steiger": "steiger",
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1747226954,
+        "lastModified": 1757318579,
         "owner": "brainhivenl",
         "repo": "pkgs",
-        "rev": "39675741e0fb57c7918415d3904ea6c288663c7f",
+        "rev": "8b80d666a94bddc04f337b388aeae308b3490c29",
         "type": "github"
       },
       "original": {
@@ -20,13 +21,27 @@
         "type": "github"
       }
     },
+    "crane": {
+      "locked": {
+        "lastModified": 1757183466,
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "d599ae4847e7f87603e7082d73ca673aa93c916d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
     "devenv": {
       "locked": {
         "dir": "src/modules",
-        "lastModified": 1747185494,
+        "lastModified": 1757570236,
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "b292bc94c2daccda165bc9f909bf6c8056e37a80",
+        "rev": "c57bded76fa6a885ab1dee2c75216cc23d58b311",
         "type": "github"
       },
       "original": {
@@ -60,10 +75,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1746537231,
+        "lastModified": 1757588530,
         "owner": "cachix",
         "repo": "git-hooks.nix",
-        "rev": "fa466640195d38ec97cf0493d6d6882bc4d14969",
+        "rev": "b084b2c2b6bc23e83bbfe583b03664eb0b18c411",
         "type": "github"
       },
       "original": {
@@ -94,10 +109,40 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1746807397,
+        "lastModified": 1757584362,
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "d33e926c80e6521a55da380a4c4c44a7462af405",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-ocitools": {
+      "locked": {
+        "lastModified": 1756716456,
+        "owner": "msanft",
+        "repo": "nixpkgs",
+        "rev": "06834caa7a59a0987a698f5ba0cdf0109ebae755",
+        "type": "github"
+      },
+      "original": {
+        "owner": "msanft",
+        "ref": "msanft/oci/refactor",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1755783167,
         "owner": "cachix",
         "repo": "devenv-nixpkgs",
-        "rev": "c5208b594838ea8e6cca5997fbf784b7cca1ca90",
+        "rev": "4a880fb247d24fbca57269af672e8f78935b0328",
         "type": "github"
       },
       "original": {
@@ -112,10 +157,51 @@
         "brainhive": "brainhive",
         "devenv": "devenv",
         "git-hooks": "git-hooks",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": "nixpkgs_2",
         "pre-commit-hooks": [
           "git-hooks"
         ]
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "brainhive",
+          "steiger",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1757644300,
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "591c5ae84f066bdfc9797b217df392d58eafd088",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "steiger": {
+      "inputs": {
+        "crane": "crane",
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-ocitools": "nixpkgs-ocitools",
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1756704694,
+        "owner": "brainhivenl",
+        "repo": "steiger",
+        "rev": "fa49485a7704da882360f00adeaf60726dcde3f2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "brainhivenl",
+        "repo": "steiger",
+        "type": "github"
       }
     },
     "systems": {
