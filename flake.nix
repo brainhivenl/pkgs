@@ -33,6 +33,9 @@
       apple-sdk = callPackage ./pkgs/apple-sdk.nix {};
       thalassa-cloud-cli = callPackage ./pkgs/thalassa-cloud-cli.nix {};
       protobuf-language-server = callPackage ./pkgs/protobuf-language-server.nix {};
+      vimPlugins = {
+        kubectl-nvim = callPackage ./pkgs/kubectl-nvim.nix {};
+      };
     });
 
     formatter = self.lib.eachSystemPkgs ({alejandra, ...}: alejandra);
