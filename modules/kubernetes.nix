@@ -16,18 +16,6 @@ in {
       description = "Name of local K3D cluster";
       default = null;
     };
-
-    defaultRepo = mkOption {
-      type = types.nullOr types.str;
-      description = "Path to default registry skaffold should use";
-      default = null;
-    };
-
-    skaffoldCommand = mkOption {
-      type = types.enum ["run" "dev" "debug"];
-      description = "Default command skaffold should execute";
-      default = "dev";
-    };
   };
 
   config = lib.mkIf cfg.enable {
